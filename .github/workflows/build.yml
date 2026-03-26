@@ -25,12 +25,9 @@ jobs:
         sudo apt-get install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
         pip install --upgrade buildozer cython
 
-    - name: Aceptar licencias del SDK de Android
-      run: |
-        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
-
     - name: Compilar APK con Buildozer
-      run: buildozer android debug
+      run: |
+        yes | buildozer android debug
 
     - name: Subir APK generado
       uses: actions/upload-artifact@v4
