@@ -1,0 +1,7 @@
+*.ipynb
+temp/
+records/
+.venv/
+__pycache__/
+.buildozer/
+bin/
