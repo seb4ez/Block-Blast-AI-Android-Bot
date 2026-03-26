@@ -5,9 +5,9 @@ on:
     branches: [ master, main ]
   workflow_dispatch:
 
+run-name: Compilacion Android
 jobs:
   build:
-    runs-name: Compilacion Android
     runs-on: ubuntu-22.04
 
     steps:
