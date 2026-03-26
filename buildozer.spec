@@ -1,27 +1,22 @@
 [app]
-title = BlockBlast Bot
-package.name = blockblastbot
-package.domain = org.seba
-
+title = BlockBlastBot
+package.name = bb_bot_pro
+package.domain = org.ai.bb
 source.dir = .
-source.include_exts = py,png,jpg,kv,atlas
-
+source.include_exts = py,png,jpg,kv,csv
 version = 1.0
 
-requirements = python3,kivy,numpy,opencv-python-headless,pyjnius
+# Requisitos clave para tu Xeon y MCTS
+requirements = python3, kivy, numpy, opencv-python, pyjnius, pandas
 
-orientation = portrait
+# Permisos CRÍTICOS para Xiaomi y autonomía
+android.permissions = SYSTEM_ALERT_WINDOW, READ_EXTERNAL_STORAGE, FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PROJECTION
+android.api = 30
+android.minapi = 21
 
-osx.kivy_version = 2.3.0
+# Esto habilita el Servicio de Accesibilidad (las "manos" del bot)
+android.services = bb_service:android_service.py
 
-android.permissions = SYSTEM_ALERT_WINDOW,FOREGROUND_SERVICE,FOREGROUND_SERVICE_MEDIA_PROJECTION,BIND_ACCESSIBILITY_SERVICE
-android.archs = arm64-v8a
-android.api = 33
-android.sdk = 33
-android.build_tools_version = 33.0.0
-android.ndk = 25b
-android.accept_sdk_license = True
-
-[buildozer]
-log_level = 2
-warn_on_root = 1
+# IMPORTANTE: Esto añade la configuración de accesibilidad al manifiesto de Android
+android.add_src = accessibility_service_config.xml
+android.manifest.intent_filters = accessibility_service_config.xml
