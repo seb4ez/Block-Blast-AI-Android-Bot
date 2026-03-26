@@ -16,6 +16,10 @@ osx.kivy_version = 2.3.0
 
 android.permissions = SYSTEM_ALERT_WINDOW,FOREGROUND_SERVICE,FOREGROUND_SERVICE_MEDIA_PROJECTION,BIND_ACCESSIBILITY_SERVICE
 android.archs = arm64-v8a
+android.api = 33
+android.sdk = 33
+android.build_tools_version = 33.0.0
+android.ndk = 25b
 
 [buildozer]
 log_level = 2
